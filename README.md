@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # admin-template
 
 ## logo 配置
@@ -54,3 +55,7 @@ npm run build
 npm run lint
 ```
 
+=======
+# custom-template
+this is my template
+>>>>>>> 3199a85e5faa03279b1994169934b7d7f6f0030f
