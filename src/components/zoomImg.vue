@@ -1,6 +1,6 @@
 <template>
   <section id="zoomImg">
-    <el-dialog class="zoom_img" top="25vh" :show-close="false" @closed="$emit('closed')" :visible.sync="zoom">
+    <el-dialog class="zoom_img" top="20vh" :show-close="false" @closed="$emit('closed')" :visible.sync="zoom">
       <div class="zoom_img_wrap">
         <img :src="url" alt="">
         <i class="el-icon-close" @click="zoom = false" />
@@ -29,7 +29,7 @@ export default {
     },
     loadErrorUrl: {
       type: String,
-      default: 'http://www.gx8899.com/uploads/allimg/2017080704/wbdeckxf0h.jpg'
+      default: null
     },
     picText: {
       type: String,
@@ -110,12 +110,14 @@ export default {
     }
     .img-wrap {
       display: inline-block;
+      text-align: center;
       margin-right: 60px;
       position: relative;
       width: 150px;
       height: 150px;
       vertical-align: text-top;
       border-radius: 3px;
+      border: 1px solid #ccc;
       img {
         width: 100%;
         height: 100%;
@@ -139,6 +141,17 @@ export default {
         bottom: 0;
         background-color: rgba(0, 0, 0, .3);
         z-index: 1;
+      }
+      .pic-text {
+        user-select: none;
+        vertical-align: middle;
+        color: #aaa;
+      }
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
       }
     }
     .pointer {
