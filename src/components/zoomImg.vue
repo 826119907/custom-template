@@ -29,7 +29,7 @@ export default {
     },
     loadErrorUrl: {
       type: String,
-      default: null
+      default: 'http://www.gx8899.com/uploads/allimg/2017080704/wbdeckxf0h.jpg'
     },
     picText: {
       type: String,
@@ -110,14 +110,21 @@ export default {
     }
     .img-wrap {
       display: inline-block;
-      text-align: center;
       margin-right: 60px;
       position: relative;
       width: 150px;
       height: 150px;
       vertical-align: text-top;
       border-radius: 3px;
-      border: 1px solid #ccc;
+      border: 1px solid rgba(46, 52, 88, 0.2);
+      text-align: center;
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0;
+        height: 100%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -133,6 +140,11 @@ export default {
         z-index: 2;
         transform: translate(-50%, -50%);
       }
+      .pic-text {
+        color: rgba(46, 52, 88, 0.4);
+        font-size: 14px;
+        vertical-align: middle;
+      }
       .mask {
         position: absolute;
         top: 0;
@@ -141,17 +153,6 @@ export default {
         bottom: 0;
         background-color: rgba(0, 0, 0, .3);
         z-index: 1;
-      }
-      .pic-text {
-        user-select: none;
-        vertical-align: middle;
-        color: #aaa;
-      }
-      &::after {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
       }
     }
     .pointer {
